@@ -1,7 +1,7 @@
 # Jekyll configuration
 
-name: Blog Name
-description: Software Developer
+name: 껌종이의 삽질공간
+description: Developer
 
 # Url is currently only used only for the RSS feed in feed.xml
 url: https://hakseong-kim.github.io/
@@ -10,8 +10,8 @@ url: https://hakseong-kim.github.io/
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
 baseurl: ''
 
-author: Pavel Makhov
-copyright: 2015-2018
+author: hakseong Kim 
+copyright: 2019-2019
 
 share:
   facebook: true
