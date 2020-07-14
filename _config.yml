@@ -4,12 +4,12 @@ bio:                '껌종이의 막나가는 메모장'
 description:        "그냥 대충 만드는 메모장입니다...."
 reading_time:       true
 words_per_minute:   200
-logo:               'assets/img/logo.png'
-background:         'assets/img/placeholder-big.jpg'
+logo:               'assets/img/logo_dj.jpeg'
+background:         'assets/img/bg_winter.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url: https://hakseong-kim.github.io/
-# url: http://localhost:4000
+# url: https://hakseong-kim.github.io/
+url: http://localhost:4000
 # url: http://127.0.0.1:4000
 
 # Jekyll

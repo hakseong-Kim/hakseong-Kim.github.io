@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Moon Jekyll Theme"
-date:   2016-04-06
+title:  "내용은 이렇게 생겼다"
+date:   2020-07-14
 excerpt: "Minimal, one column Jekyll theme for your blog."
 script: true
 tag:
