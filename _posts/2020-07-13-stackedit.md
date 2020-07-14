@@ -7,7 +7,7 @@ script: true
 tag:
 - jekyll
 - stackedit
-comments: true
+comments: false
 ---
 
 
