@@ -1,12 +1,13 @@
 ---
 layout: post
-title:  "내용은 이렇게 생겼다"
+title:  "stackedit(마크다운 사이트 만들기 예제)"
 date:   2020-07-14
 excerpt: "Minimal, one column Jekyll theme for your blog."
-script: true
 tag:
 - jekyll
 - stackedit
+- blog
+blog: true
 comments: false
 ---
 

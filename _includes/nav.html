@@ -87,6 +87,7 @@
             </li>
             <li><a href="{{ site.url }}/posts/">All Posts</a></li>
             
+            
 			<!-- <li>
 				<a href="#">Posts</a>
 				<ul class="dl-submenu">
@@ -106,7 +107,10 @@
 		        {% assign domain = '' %}
 		        {% else %}
 		        {% assign domain = site.url %}
-		    {% endif %}
+            {% endif %}
+            <!-- <li><a href="{{ site.url }}/script/">Script</a></li> -->
+            <li><a href="{{ site.url }}/blog/">blogs</a></li>
+            
             <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li>
             <li><a href="{{ site.url }}/tags/">All Tags</a></li>
 		  {% endfor %}

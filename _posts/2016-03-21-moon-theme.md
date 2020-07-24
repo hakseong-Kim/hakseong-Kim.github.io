@@ -1,14 +1,13 @@
 ---
 layout: post
-title:  "Moon Jekyll Theme"
+title:  "Moon Jekyll Theme(테마 기본 설명)"
 date:   2016-04-06
 excerpt: "Minimal, one column Jekyll theme for your blog."
-project: true
+blog: true
 tag:
 - jekyll 
 - moon
 - blog
-- about
 - theme
 comments: true
 ---

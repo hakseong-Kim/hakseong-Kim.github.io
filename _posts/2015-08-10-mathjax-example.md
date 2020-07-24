@@ -1,14 +1,13 @@
 ---
 layout: post
-title:  "MathJax Example"
+title:  "MathJax Example(뭐하는 사이트징)"
 date:   2015-08-10
 excerpt: "MathJax Example for Moon Jekyll Theme."
 tag:
 - markdown 
 - mathjax
-- example
-- test
-- jekyll
+- blog
+blog: true
 comments: true
 ---
 

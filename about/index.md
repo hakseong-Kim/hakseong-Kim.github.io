@@ -1,12 +1,12 @@
 ---
 layout: page
-title: About the Theme
-tags: [about, Jekyll, theme, moon]
-date: 2016-03-21
+title: 껌종이
+tags: [about]
+date: 2020-07-24
 comments: false
 ---
     
-<center><a href="http://taylantatli.github.io/Moon"><b>Moon</b></a> is a minimal, one column jekyll theme.</center>
+<center><a href="https://github.com/hakseong-Kim/"><b> 뚱히와 제리, 두 주인님을 모시는 코딩하는 집사입니다.</b></a></center>
 
 ## Features
 * Minimal, you can focus on your content
