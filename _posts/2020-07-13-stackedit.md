@@ -3,6 +3,7 @@ layout: post
 title:  "stackedit(마크다운 사이트 만들기 예제)"
 date:   2020-07-14
 excerpt: "Minimal, one column Jekyll theme for your blog."
+blog: true
 tag:
 - jekyll
 - stackedit

@@ -11,6 +11,7 @@ tag:
 - jekyll
 - 문법
 comments: true
+blog: true
 ---
 
 ## HTML Elements

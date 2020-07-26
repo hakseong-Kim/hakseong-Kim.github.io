@@ -88,20 +88,62 @@
                 </ul><!-- /.dl-submenu -->
                 
             </li>
-           
-            <li><a href="{{ site.url }}/Front/">Front End {{ site.count }}</a></li>
-            <li><a class='second'  href="{{ site.url }}/Front_html/"> - HTML</a></li>
-            <li><a class='second' href="{{ site.url }}/Front_css/"> - CSS</a></li>
-            <li><a class='second'  href="{{ site.url }}/Front_js/"> - Java Script</a></li>
-            <li><a href="{{ site.url }}/Back/">Back End</a></li>
-            <li><a class='second'  href="{{ site.url }}/Back_node/"> - Node js</a></li>
-            <li><a class='second'  href="{{ site.url }}/Server/"> - Server</a></li>
-            <li><a class='second'  href="{{ site.url }}/Design/"> - Design</a></li>
+
+            {% assign Front_count = 0 %}
+            {% assign Front_html_count = 0 %}
+            {% assign Front_css_count = 0 %}
+            {% assign Front_js_count = 0 %}
+            {% assign Back_count = 0 %}
+            {% assign Back_node_count = 0 %}
+            {% assign Server_count = 0 %}
+            {% assign Design_count = 0 %}
+            {% assign project_count = 0 %}
+            {% assign blogs = 0 %}
+            {% assign script = 0 %}
+            {% assign all_count = 0 %}
+
+            
+            {% for post in site.posts %}
+                {% if post.Front_html %}
+                {% assign Front_count = Front_count | plus: 1 %}
+                {% assign Front_html_count = Front_html_count | plus: 1 %}
+                {% elsif post.Front_css %}
+                {% assign Front_count = Front_count | plus: 1 %}
+                {% assign Front_css_count = Front_css_count | plus: 1 %}
+                {% elsif post.Front_js %}
+                {% assign Front_count = Front_count | plus: 1 %}
+                {% assign Front_js_count = Front_js_count | plus: 1 %}
+                {% elsif post.Back_node %}
+                {% assign Back_count = Back_count | plus: 1 %}
+                {% assign Back_node_count = Back_node_count | plus: 1 %}
+                {% elsif post.Back_server %}
+                {% assign Back_count = Back_count | plus: 1 %}
+                {% assign Server_count = Server_count | plus: 1 %}
+                {% elsif post.design %}
+                {% assign Design_count = Design_count | plus: 1 %}
+                {% elsif post.blog %}
+                {% assign blogs = blogs | plus: 1 %}
+                {% elsif post.script %}
+                {% assign script = script | plus: 1 %}
+                {% endif %}
+            {% assign all_count = all_count | plus: 1 %}
+    
+            {% endfor %}
+            
+            <li><a href="{{ site.url }}/Front_html/">Front End ({{ Front_count }})</a></li>
+            <li><a class='second'  href="{{ site.url }}/Front_html/"> - HTML ({{ Front_html_count }})</a></li>
+            <li><a class='second' href="{{ site.url }}/Front_css/"> - CS ({{ Front_css_count }})</a></li>
+            <li><a class='second'  href="{{ site.url }}/Front_js/"> - Java Script ({{ Front_js_count }})</a></li>
+            <li><a href="{{ site.url }}/Back_node/">Back End ({{ Back_count }})</a></li>
+            <li><a class='second'  href="{{ site.url }}/Back_node/"> - Node js ({{ Back_node_count }})</a></li>
+            <li><a class='second'  href="{{ site.url }}/Back_server/"> - Server ({{ Server_count }})</a></li>
+            <li><a href="{{ site.url }}/design/">Design ({{ Design_count }})</a></li>
 			<li>
-				<a href="#">Projects</a>
+             
+				<a href="#">Projects ({{ project_count }})</a>
 				<ul class="dl-submenu">
-					<li><a href="{{ site.url }}/node/">node</a></li>
-					<li><a href="{{ site.url }}/aws/">aws</a></li>
+					<li><a href="{{ site.url }}/node/">node ({{ node_count }})</a></li>
+					<li><a href="{{ site.url }}/aws/">aws ({{ aws_count }})</a></li>
 				</ul>
 			</li>
 			{% for link in site.data.navigation %}
@@ -111,10 +153,11 @@
 		        {% assign domain = site.url %}
             {% endif %}
             <!-- <li><a href="{{ site.url }}/script/">Script</a></li> -->
-            <li><a href="{{ site.url }}/blog/">blogs</a></li>
+            <li><a href="{{ site.url }}/blog/">blogs ({{ blogs }})</a></li>
 
-            <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li>
-            <li><a href="{{ site.url }}/posts/">All Posts</a></li>
+            <!-- <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li> -->
+            <li><a href="{{ site.url }}/script/">script ({{ script }})</a></li>
+            <li><a href="{{ site.url }}/posts/">All Posts ({{ all_count }})</a></li>
             <li><a href="{{ site.url }}/tags/">All Tags</a></li>
 		  {% endfor %}
 		</ul><!-- /.dl-menu -->
