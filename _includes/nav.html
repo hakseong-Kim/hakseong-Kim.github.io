@@ -98,8 +98,10 @@
             {% assign Server_count = 0 %}
             {% assign Design_count = 0 %}
             {% assign project_count = 0 %}
-            {% assign blogs = 0 %}
-            {% assign script = 0 %}
+            {% assign node_count = 0 %}
+            {% assign aws_count = 0 %}
+            {% assign blogs_count = 0 %}
+            {% assign script_count = 0 %}
             {% assign all_count = 0 %}
 
             
@@ -121,29 +123,33 @@
                 {% assign Server_count = Server_count | plus: 1 %}
                 {% elsif post.design %}
                 {% assign Design_count = Design_count | plus: 1 %}
+                {% elsif post.node %}
+                {% assign node_count = node_count | plus: 1 %}
+                {% elsif post.aws %}
+                {% assign aws_count = aws_count | plus: 1 %}
                 {% elsif post.blog %}
-                {% assign blogs = blogs | plus: 1 %}
+                {% assign blogs_count = blogs_count | plus: 1 %}
                 {% elsif post.script %}
-                {% assign script = script | plus: 1 %}
+                {% assign script_count = script_count | plus: 1 %}
                 {% endif %}
             {% assign all_count = all_count | plus: 1 %}
     
             {% endfor %}
             
-            <li><a href="{{ site.url }}/Front_html/">Front End ({{ Front_count }})</a></li>
-            <li><a class='second'  href="{{ site.url }}/Front_html/"> - HTML ({{ Front_html_count }})</a></li>
-            <li><a class='second' href="{{ site.url }}/Front_css/"> - CS ({{ Front_css_count }})</a></li>
-            <li><a class='second'  href="{{ site.url }}/Front_js/"> - Java Script ({{ Front_js_count }})</a></li>
-            <li><a href="{{ site.url }}/Back_node/">Back End ({{ Back_count }})</a></li>
-            <li><a class='second'  href="{{ site.url }}/Back_node/"> - Node js ({{ Back_node_count }})</a></li>
-            <li><a class='second'  href="{{ site.url }}/Back_server/"> - Server ({{ Server_count }})</a></li>
-            <li><a href="{{ site.url }}/design/">Design ({{ Design_count }})</a></li>
+            <li><a id="Front" href="{{ site.url }}/Front_html/">Front End ({{ Front_count }})</a></li>
+            <li><a class='second' id="Front_html"  href="{{ site.url }}/Front_html/"> - HTML ({{ Front_html_count }})</a></li>
+            <li><a class='second' id="Front_css"  href="{{ site.url }}/Front_css/"> - CSS({{ Front_css_count }})</a></li>
+            <li><a class='second' id="Front_js"  href="{{ site.url }}/Front_js/"> - Java Script ({{ Front_js_count }})</a></li>
+            <li><a id="Back" href="{{ site.url }}/Back_node/">Back End ({{ Back_count }})</a></li>
+            <li><a class='second' id="Back_node"  href="{{ site.url }}/Back_node/"> - Node js ({{ Back_node_count }})</a></li>
+            <li><a class='second' id="Back_server"  href="{{ site.url }}/Back_server/"> - Server ({{ Server_count }})</a></li>
+            <li><a id="design" href="{{ site.url }}/design/">Design ({{ Design_count }})</a></li>
 			<li>
              
-				<a href="#">Projects ({{ project_count }})</a>
+				<a id="Projects" href="#">Projects ({{ project_count }})</a>
 				<ul class="dl-submenu">
-					<li><a href="{{ site.url }}/node/">node ({{ node_count }})</a></li>
-					<li><a href="{{ site.url }}/aws/">aws ({{ aws_count }})</a></li>
+					<li><a id="node" href="{{ site.url }}/node/">node ({{ node_count }})</a></li>
+					<li><a id="aws" href="{{ site.url }}/aws/">aws ({{ aws_count }})</a></li>
 				</ul>
 			</li>
 			{% for link in site.data.navigation %}
@@ -152,15 +158,24 @@
 		        {% else %}
 		        {% assign domain = site.url %}
             {% endif %}
+
             <!-- <li><a href="{{ site.url }}/script/">Script</a></li> -->
-            <li><a href="{{ site.url }}/blog/">blogs ({{ blogs }})</a></li>
+            <li><a id="blog" href="{{ site.url }}/blog/">blogs ({{ blogs_count }})</a></li>
 
             <!-- <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li> -->
-            <li><a href="{{ site.url }}/script/">script ({{ script }})</a></li>
-            <li><a href="{{ site.url }}/posts/">All Posts ({{ all_count }})</a></li>
-            <li><a href="{{ site.url }}/tags/">All Tags</a></li>
+            <li><a id="script" href="{{ site.url }}/script/">script ({{ script_count }})</a></li>
+            <li><a id="posts" href="{{ site.url }}/posts/">All Posts ({{ all_count }})</a></li>
+            <li><a id="tags" href="{{ site.url }}/tags/">All Tags</a></li>
 		  {% endfor %}
-		</ul><!-- /.dl-menu -->
+        </ul><!-- /.dl-menu -->
+        
+        {% assign idname = page.dir | replace: '/', '' %}
+        <script>
+            console.log('아농하세여');
+            $('#{{idname}}').css('color','#0ff');
+        </script>
+        
+
 	</nav><!-- /.dl-menuwrapper -->
 
     <script>
