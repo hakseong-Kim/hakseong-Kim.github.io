@@ -3,9 +3,9 @@
     <nav id="dl-menu" class="dl-menuwrapper" role="navigation">
 		<button class="dl-trigger dl-active">Open Menu</button>
 		<ul class="dl-menu dl-menuopen">
-			<li><a href="{{ site.url }}/">Home</a></li>
+			<li><a id="home" href="{{ site.url }}/">Home</a></li>
 			<li>
-				<a href="#">About</a>
+				<a id="about" href="#">About</a>
 				<ul class="dl-submenu ">
 					<li>
 						<img src="{{ site.url }}/{{ site.logo }}" alt="{{ site.title }} photo" class="author-photo">
@@ -98,7 +98,7 @@
             {% assign Server_count = 0 %}
             {% assign Design_count = 0 %}
             {% assign project_count = 0 %}
-            {% assign node_count = 0 %}
+            {% assign node_emr_count = 0 %}
             {% assign aws_count = 0 %}
             {% assign blogs_count = 0 %}
             {% assign script_count = 0 %}
@@ -123,8 +123,8 @@
                 {% assign Server_count = Server_count | plus: 1 %}
                 {% elsif post.design %}
                 {% assign Design_count = Design_count | plus: 1 %}
-                {% elsif post.node %}
-                {% assign node_count = node_count | plus: 1 %}
+                {% elsif post.node_emr %}
+                {% assign node_emr_count = node_emr_count | plus: 1 %}
                 {% elsif post.aws %}
                 {% assign aws_count = aws_count | plus: 1 %}
                 {% elsif post.blog %}
@@ -148,7 +148,7 @@
              
 				<a id="Projects" href="#">Projects ({{ project_count }})</a>
 				<ul class="dl-submenu">
-					<li><a id="node" href="{{ site.url }}/node/">node ({{ node_count }})</a></li>
+					<li><a id="node" href="{{ site.url }}/node_emr/">web&app 프로젝트 ({{ node_emr_count }})</a></li>
 					<li><a id="aws" href="{{ site.url }}/aws/">aws ({{ aws_count }})</a></li>
 				</ul>
 			</li>
@@ -170,14 +170,20 @@
         </ul><!-- /.dl-menu -->
         
         {% assign idname = page.dir | replace: '/', '' %}
+        {% if idname contains 'node_emr' or idname contains 'aws' %}
         <script>
-            console.log('아농하세여');
+            console.log('{{ idname | number_of_words }}22아농하세여');
+            $('#Projects').css('color','#0ff');
+        </script>
+
+        {% else %}
+        <script>
+            console.log('{{ idname | number_of_words }}33아농하세여');
             $('#{{idname}}').css('color','#0ff');
         </script>
-        
 
+        {% endif %}
 	</nav><!-- /.dl-menuwrapper -->
-
     <script>
 
 $( window ).resize(function() {
