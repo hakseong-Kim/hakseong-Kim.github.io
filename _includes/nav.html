@@ -124,8 +124,10 @@
                 {% elsif post.design %}
                 {% assign Design_count = Design_count | plus: 1 %}
                 {% elsif post.node_emr %}
+                {% assign project_count = project_count | plus: 1 %}
                 {% assign node_emr_count = node_emr_count | plus: 1 %}
                 {% elsif post.aws %}
+                {% assign project_count = project_count | plus: 1 %}
                 {% assign aws_count = aws_count | plus: 1 %}
                 {% elsif post.blog %}
                 {% assign blogs_count = blogs_count | plus: 1 %}
