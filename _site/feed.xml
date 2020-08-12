@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://127.0.0.1:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://127.0.0.1:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://127.0.0.1:4000/" rel="alternate" type="text/html" /><updated>2020-07-31T09:56:57+09:00</updated><id>http://127.0.0.1:4000/</id><title type="html">Hakseong kim</title><subtitle>그냥 대충 만드는 메모장입니다....</subtitle><entry><title type="html">1. 프로젝트 킥 오프 (2020.07.31 수정)</title><link href="http://127.0.0.1:4000/kickoff/" rel="alternate" type="text/html" title="1. 프로젝트 킥 오프 (2020.07.31 수정)" /><published>2020-07-31T00:00:00+09:00</published><updated>2020-07-31T00:00:00+09:00</updated><id>http://127.0.0.1:4000/kickoff</id><content type="html" xml:base="http://127.0.0.1:4000/kickoff/">&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://127.0.0.1:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://127.0.0.1:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://127.0.0.1:4000/" rel="alternate" type="text/html" /><updated>2020-08-12T17:38:54+09:00</updated><id>http://127.0.0.1:4000/</id><title type="html">Hakseong kim</title><subtitle>그냥 대충 만드는 메모장입니다....</subtitle><entry><title type="html">Google Cloud Platform 무료서버를 가져가보자</title><link href="http://127.0.0.1:4000/aws2/" rel="alternate" type="text/html" title="Google Cloud Platform 무료서버를 가져가보자" /><published>2020-08-12T00:00:00+09:00</published><updated>2020-08-12T00:00:00+09:00</updated><id>http://127.0.0.1:4000/aws2</id><content type="html" xml:base="http://127.0.0.1:4000/aws2/">&lt;style&gt;
+ img{
+	 border-radius: 5px;
+ }
+
+&lt;/style&gt;
+
+&lt;h1 id=&quot;목적&quot;&gt;목적&lt;/h1&gt;
+&lt;p&gt;Google Cloud Platform 에서 제공하는 1년치 인스턴스를 제외하고, 무료로 서버를 받는 방법을 알아보자&lt;/p&gt;
+
+&lt;h2 id=&quot;사용방법&quot;&gt;사용방법&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;무료로 사용하기 위해서는 다음 조건을 충족을 해야한다 - 해당 리전과, 용량을 지정해서 사용할 것&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/45492520/89964158-59e20580-dc84-11ea-8f0a-5545f57b3937.png&quot; alt=&quot;image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;경로-및-설정-방법&quot;&gt;경로 및 설정 방법&lt;/h2&gt;
+
+&lt;!-- &lt;img src=&quot;https://user-images.githubusercontent.com/45492520/89963037-7b8dbd80-dc81-11ea-83ae-bb8e476ec597.png&quot; width=40%&gt; --&gt;
+
+&lt;p&gt;(1) &lt;a href=&quot;https://cloud.google.com/free?hl=ko&quot;&gt;구글 클라우드 플랫폼&lt;/a&gt; 홈페이지 접속&lt;br /&gt;
+(2) 메인 화면의 [&lt;a href=&quot;https://console.cloud.google.com/freetrial/signup/tos?hl=ko&amp;amp;_ga=2.12091890.778630772.1597133095-287812363.1597133095&amp;amp;_gac=1.170650260.1597133169.EAIaIQobChMIz8m8s9iS6wIVUqmWCh3RsgffEAAYASAAEgI8X_D_BwE&quot;&gt;무료로 시작하기&lt;/a&gt;] 클릭 &lt;br /&gt;
+(3) 계정 및 결제정보 입력 후 접속&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/45492520/89982363-8ca1f300-dcb0-11ea-9218-af59268b35a7.png&quot; alt=&quot;image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(4) [햄버거 메뉴] - [Compute Engine] - [VM인스턴스] 이동&lt;br /&gt;
+(5) [만들기] 클릭 후 &lt;b&gt;다음과 같이 설정을 한다.&lt;/b&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;리전은 국가 3개 중 하나 선택(오리건, 아이오와, 사우스캐롤라이나), 영역은 아무거나&lt;/li&gt;
+  &lt;li&gt;시리즈는 N1(냅둬도됨), 머신은 f1-micro&lt;/li&gt;
+  &lt;li&gt;부팅디스크는 원하는거 선택, 안에 용량은 표준에 30GB안에서 선택&lt;/li&gt;
+  &lt;li&gt;엑세스 범위는 모든 클라우스 api 허용, 방화벽 모두 체크&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/45492520/89982935-99731680-dcb1-11ea-9d40-326eb3a39402.png&quot; alt=&quot;image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;지정 완료 후 월별 예상금액이 나오는데, 설정만 잘 해줬을 경우 큰 문제없이 과금이 되지 않을 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;결과-화면&quot;&gt;결과 화면&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;[VM 인스턴스] 페이지에서 결과된 모습을 보고, 표시된 [SSH] 연결 버튼도 눌러보자&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/45492520/89987806-967c2400-dcb9-11ea-88c1-41532e3568c0.png&quot; alt=&quot;image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;다른-기기에서-서버로-접속을-해보자&quot;&gt;다른 기기에서 서버로 접속을 해보자&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;mac 기준 key 만들기&lt;/p&gt;
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cat ~/.ssh/id_rsa.pub // 키 있나 보기
+$ cd ~/.ssh //  없으면 이동 후
+$ ssh-keygen // 키 생성
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;p&gt;키 값 집어넣기&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;[메타데이터] - [SSH 탭] 에서 키 추가&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;아이피 고정 설정하기&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/45492520/89992088-badaff00-dcbf-11ea-890d-c7b9866e862d.png&quot; alt=&quot;image&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;[해당 옆 추가메뉴] - [네트워크 세부설정 보기] 후 왼쪽 메뉴에 [외부 IP 주소] 클릭&lt;/li&gt;
+  &lt;li&gt;해당 아이피 유형을 고정으로 변경&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;최종 연결&lt;/p&gt;
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ssh [등록된 key 이름]@[클라우드 아이피 주소]
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;!-- &lt;img src=&quot;https://user-images.githubusercontent.com/45492520/89992445-3fc61880-dcc0-11ea-817e-116c8fa85d5d.png&quot; width=40%&gt; --&gt;
+  &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/45492520/89992445-3fc61880-dcc0-11ea-817e-116c8fa85d5d.png&quot; alt=&quot;image&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><category term="aws" /><category term="project" /><summary type="html">도커 및 가벼운 프로젝트 연습용 및 굴릴용도로 나쁘찌 않은 내용임</summary></entry><entry><title type="html">1. 프로젝트 킥 오프 (2020.07.31 수정)</title><link href="http://127.0.0.1:4000/kickoff/" rel="alternate" type="text/html" title="1. 프로젝트 킥 오프 (2020.07.31 수정)" /><published>2020-07-31T00:00:00+09:00</published><updated>2020-07-31T00:00:00+09:00</updated><id>http://127.0.0.1:4000/kickoff</id><content type="html" xml:base="http://127.0.0.1:4000/kickoff/">&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
 &lt;p&gt;web and app 신규 프로젝트를 앞두고 있는데, 안에 레퍼런스에 대해서 아직 모르는 부분이 많아 그 부분을 정리하면서 진행하고자 한다.&lt;/p&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
@@ -964,89 +1045,4 @@ mathjax: true
       &lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Syntax_highlighting&quot;&gt;http://en.wikipedia.org/wiki/Syntax_highlighting&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><category term="code" /><category term="highlighting" /><category term="blog" /><summary type="html">Demo post displaying the various ways of highlighting code in Markdown.</summary></entry><entry><title type="html">A Post with Images(이미지 파일 넣기 예제)</title><link href="http://127.0.0.1:4000/sample-post-images/" rel="alternate" type="text/html" title="A Post with Images(이미지 파일 넣기 예제)" /><published>2013-05-22T00:00:00+09:00</published><updated>2013-05-22T00:00:00+09:00</updated><id>http://127.0.0.1:4000/sample-post-images</id><content type="html" xml:base="http://127.0.0.1:4000/sample-post-images/">&lt;p&gt;Here are some examples of what a post with images might look like. If you want to display two or three images next to each other responsively use &lt;code class=&quot;highlighter-rouge&quot;&gt;figure&lt;/code&gt; with the appropriate &lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;. Each instance of &lt;code class=&quot;highlighter-rouge&quot;&gt;figure&lt;/code&gt; is auto-numbered and displayed in the caption.&lt;/p&gt;
-
-&lt;h3 id=&quot;figures-for-images-or-video&quot;&gt;Figures (for images or video)&lt;/h3&gt;
-
-&lt;h4 id=&quot;one-up&quot;&gt;One Up&lt;/h4&gt;
-
-&lt;figure&gt;
-	&lt;a href=&quot;http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_b.jpg&quot;&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;figcaption&gt;&lt;a href=&quot;http://www.flickr.com/photos/80901381@N04/7758832526/&quot; title=&quot;Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr&quot;&gt;Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr&lt;/a&gt;.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Vero laborum commodo occupy. Semiotics voluptate mumblecore pug. Cosby sweater ullamco quinoa ennui assumenda, sapiente occupy delectus lo-fi. Ea fashion axe Marfa cillum aliquip. Retro Bushwick keytar cliche. Before they sold out sustainable gastropub Marfa readymade, ethical Williamsburg skateboard brunch qui consectetur gentrify semiotics. Mustache cillum irony, fingerstache magna pour-over keffiyeh tousled selfies.&lt;/p&gt;
-
-&lt;h4 id=&quot;two-up&quot;&gt;Two Up&lt;/h4&gt;
-
-&lt;p&gt;Apply the &lt;code class=&quot;highlighter-rouge&quot;&gt;half&lt;/code&gt; class like so to display two images side by side that share the same caption.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;half&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-1-large.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-1.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-2-large.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-2.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;Caption describing these two images.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;And you’ll get something that looks like this:&lt;/p&gt;
-
-&lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://placehold.it/1200x600.JPG&quot;&gt;&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://placehold.it/1200x600.jpeg&quot;&gt;&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;figcaption&gt;Two images.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h4 id=&quot;three-up&quot;&gt;Three Up&lt;/h4&gt;
-
-&lt;p&gt;Apply the &lt;code class=&quot;highlighter-rouge&quot;&gt;third&lt;/code&gt; class like so to display three images side by side that share the same caption.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;third&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-1.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-2.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-3.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;Caption describing these three images.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;And you’ll get something that looks like this:&lt;/p&gt;
-
-&lt;figure class=&quot;third&quot;&gt;
-	&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;
-	&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;
-	&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;
-	&lt;figcaption&gt;Three images.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;alternative-way&quot;&gt;Alternative way&lt;/h3&gt;
-
-&lt;p&gt;Another way to achieve the same result is to include &lt;code class=&quot;highlighter-rouge&quot;&gt;gallery&lt;/code&gt; Liquid template. In this case you
-don’t have to write any HTML tags – just copy a small block of code, adjust the parameters (see below)
-and fill the block with any number of links to images. You can mix relative and external links.&lt;/p&gt;
-
-&lt;p&gt;Here is the block you might want to use:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-liquid&quot; data-lang=&quot;liquid&quot;&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;capture&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
-	http://vignette2.wikia.nocookie.net/naruto/images/9/97/Hinata.png
-	http://vignette4.wikia.nocookie.net/naruto/images/7/79/Hinata_Part_II.png
-	http://vignette1.wikia.nocookie.net/naruto/images/1/15/J%C5%ABho_S%C5%8Dshiken.png
-&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;endcapture&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gallery&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;caption&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Test images&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;cols&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Parameters:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;caption&lt;/code&gt;: Sets the caption under the gallery (see &lt;code class=&quot;highlighter-rouge&quot;&gt;figcaption&lt;/code&gt; HTML tag above);&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cols&lt;/code&gt;: Sets the number of columns of the gallery.
-Available values: [1..3].&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It will look something like this:&lt;/p&gt;
-
-&lt;figure class=&quot;third&quot;&gt;
-    
-    &lt;a href=&quot;http://vignette2.wikia.nocookie.net/naruto/images/9/97/Hinata.png&quot;&gt;&lt;img src=&quot;http://vignette2.wikia.nocookie.net/naruto/images/9/97/Hinata.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-    
-    &lt;a href=&quot;http://vignette4.wikia.nocookie.net/naruto/images/7/79/Hinata_Part_II.png&quot;&gt;&lt;img src=&quot;http://vignette4.wikia.nocookie.net/naruto/images/7/79/Hinata_Part_II.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-    
-    &lt;a href=&quot;http://vignette1.wikia.nocookie.net/naruto/images/1/15/J%C5%ABho_S%C5%8Dshiken.png&quot;&gt;&lt;img src=&quot;http://vignette1.wikia.nocookie.net/naruto/images/1/15/J%C5%ABho_S%C5%8Dshiken.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-    
-    &lt;figcaption&gt;Test images&lt;/figcaption&gt;
-&lt;/figure&gt;</content><category term="images" /><category term="blog" /><summary type="html">Examples and code for displaying images in posts.</summary></entry></feed>
+&lt;/div&gt;</content><category term="code" /><category term="highlighting" /><category term="blog" /><summary type="html">Demo post displaying the various ways of highlighting code in Markdown.</summary></entry></feed>
