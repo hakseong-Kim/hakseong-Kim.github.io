@@ -1,6 +1,7 @@
 ---
+permalink: /blogs/a-post-with-images
 layout: post
-title: "A Post with Images(이미지 파일 넣기 예제)"
+title: "A-Post-with-Images(이미지 파일 넣기 예제)"
 date: 2013-05-22
 excerpt: "Examples and code for displaying images in posts."
 tags: [images, blog]

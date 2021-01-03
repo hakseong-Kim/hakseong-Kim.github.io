@@ -1,8 +1,10 @@
 ---
+permalink: /blogs/markdown-syntax
 layout: post
 title:  "Markdown Syntax(마크다운 기본 문법)"
 date:   2016-03-15
 excerpt: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
+feature: http://i.imgur.com/Ds6S7lJ.png
 tag:
 - markdown 
 - syntax

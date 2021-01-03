@@ -1,8 +1,10 @@
 ---
+permalink: /blogs/moon-jekyll-theme
 layout: post
 title:  "Moon Jekyll Theme(테마 기본 설명)"
 date:   2016-04-06
 excerpt: "Minimal, one column Jekyll theme for your blog."
+feature: http://i.imgur.com/Ds6S7lJ.png
 blog: true
 tag:
 - jekyll 

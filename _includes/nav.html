@@ -2,9 +2,9 @@
 <script src="{{ site.url }}/assets/js/jquery-1.12.0.min.js"></script>
 
     <nav id="dl-menu" class="dl-menuwrapper" role="navigation">
-		<button class="dl-trigger dl-active">Open Menu</button>
-		<ul class="dl-menu dl-menuopen">
-            <li class="menuClose"><a class="menuClose">Menu Close</a></li>
+		<button class="dl-trigger">Open Menu</button>
+		<ul class="dl-menu">
+            <!-- <li class="menuClose"><a class="menuClose">Menu Close</a></li> -->
 			<li><a id="home" href="{{ site.url }}/">Home</a></li>
 			<li>
 				<a id="about" href="#">About</a>
@@ -139,7 +139,7 @@
             {% assign all_count = all_count | plus: 1 %}
     
             {% endfor %}
-            
+            <li><a id="tags" href="{{ site.url }}/tags/">All Tags</a></li>
             <li><a id="Front" href="{{ site.url }}/Front_html/">Front End ({{ Front_count }})</a></li>
             <li><a class='second' id="Front_html"  href="{{ site.url }}/Front_html/"> - HTML ({{ Front_html_count }})</a></li>
             <li><a class='second' id="Front_css"  href="{{ site.url }}/Front_css/"> - CSS({{ Front_css_count }})</a></li>
@@ -169,7 +169,7 @@
             <!-- <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li> -->
             <li><a id="script" href="{{ site.url }}/script/">script ({{ script_count }})</a></li>
             <li><a id="posts" href="{{ site.url }}/posts/">All Posts ({{ all_count }})</a></li>
-            <li><a id="tags" href="{{ site.url }}/tags/">All Tags</a></li>
+            
 		  {% endfor %}
         </ul><!-- /.dl-menu -->
         

@@ -1,8 +1,10 @@
 ---
+permalink: /blogs/syntax-highlighting-post
 layout: post
 title: Syntax Highlighting Post(하이라이트 예제)
 date: 2013-08-16
 excerpt: "Demo post displaying the various ways of highlighting code in Markdown."
+feature: http://i.imgur.com/Ds6S7lJ.png
 tags: [code, highlighting,blog]
 blog: true
 comments: true

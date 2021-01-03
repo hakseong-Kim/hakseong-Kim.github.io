@@ -1,8 +1,10 @@
 ---
+permalink: /aws/google-cloud
 layout: post
 title:  "Google Cloud Platform 무료서버를 가져가보자"
 date:   2020-08-12
 excerpt: "도커 및 가벼운 프로젝트 연습용 및 굴릴용도로 나쁘찌 않은 내용임"
+feature: http://i.imgur.com/Ds6S7lJ.png
 Back_server: true
 tag:
 - aws

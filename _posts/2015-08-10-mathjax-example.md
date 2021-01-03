@@ -1,8 +1,10 @@
 ---
+permalink: /blogs/mathJax-example
 layout: post
 title:  "MathJax Example(뭐하는 사이트징)"
 date:   2015-08-10
 excerpt: "MathJax Example for Moon Jekyll Theme."
+feature: http://i.imgur.com/Ds6S7lJ.png
 tag:
 - markdown 
 - mathjax

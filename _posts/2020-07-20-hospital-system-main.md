@@ -1,8 +1,10 @@
 ---
+permalink: /nodejs/hospital-system-main
 layout: post
 title:  "병원관리 시스템 메인"
 date:   2020-07-14
 excerpt: "Minimal, one column Jekyll theme for your blog."
+feature: http://i.imgur.com/Ds6S7lJ.png
 Back_node: true
 tag:
 - node

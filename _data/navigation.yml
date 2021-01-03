@@ -1,9 +1,39 @@
 # Site navigation links
 
-# - title: Projects
-#   url: /projects/
+#Front-end
+#back-end
+- title: hospital-system-main
+  permalink: /nodejs/hospital-system-main
 
-- title: Script
-  url: /script/
+- title: aws-main
+  permalink: /server/aws-main
 
+- title: google-cloud
+  permalink: /server/google-cloud
+#Design
+#Project
+- title: project kickoff
+  permalink: /project/kickoff
+#blogs
+- title: A-Post-with-Images
+  permalink: /blogs/a-post-with-images
+
+- title: A-Post-with-a-Video
+  permalink: /blogs/a-post-with-a-video
+
+- title: Syntax-Highlighting-Post
+  permalink: /blogs/syntax-highlighting-post
+
+- title: MathJax-Example
+  permalink: /blogs/mathJax-example
+
+- title: Markdown-Syntax
+  permalink: /blogs/markdown-syntax
+
+- title: Moon-Jekyll-Theme
+  permalink: /blogs/moon-jekyll-theme
+
+- title: stackedit
+  permalink: /blogs/stackedit
+#script
 

@@ -29,7 +29,7 @@ layout: compress
                         	<p style="font-size:1rem;font-weight:300">{{ site.bio }}</p>
 			            </a>
                     </h3>
-                    {% include social-links.html %}
+                    <!-- {% include social-links.html %}
                   <hr class="hr-line">
                   <h3 class="title">
                          <a class="btn zoombtn" href="{{ site.url }}/about">
@@ -44,12 +44,34 @@ layout: compress
                          <a class="btn zoombtn" href="{{ site.url }}/script">
                          script
                         </a>
-                 </h3>
+                 </h3> -->
+            </div>
+
+            <div class="row">
+                <h3 class="title">
+               {% assign post_count = 0 %}
+               {% for post in site.posts %}
+                <article class="tile" itemscope itemtype="http://schema.org/Article">
+                    <a class="btn zoombtn" href="{{ post.url }}">
+                        <img src="{{ post.feature }}" style='height : 7rem;'>
+                    </a>
+               
+                    <p class="entry-date">{{ post.date | date: '%B %d, %Y' }}</p>
+                    <h2 class="post-title" itemprop="name" ><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    <p class="post-excerpt">{{ post.excerpt }}</p>
+
+               </article>
+                   
+               {% endfor %}
+                </h3>
             </div>
         </div>
+        
+
     </header>
     <script>
-            console.log('hello world!');
+
+        
             $('#home').css('color','#0ff');
     </script>
     {% include scripts.html %}
