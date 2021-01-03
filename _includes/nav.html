@@ -156,21 +156,11 @@
 					<li><a id="aws" href="{{ site.url }}/aws/">aws ({{ aws_count }})</a></li>
 				</ul>
 			</li>
-			{% for link in site.data.navigation %}
-		    {% if link.url contains 'http' %}
-		        {% assign domain = '' %}
-		        {% else %}
-		        {% assign domain = site.url %}
-            {% endif %}
 
-            <!-- <li><a href="{{ site.url }}/script/">Script</a></li> -->
             <li><a id="blog" href="{{ site.url }}/blog/">blogs ({{ blogs_count }})</a></li>
-
-            <!-- <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li> -->
             <li><a id="script" href="{{ site.url }}/script/">script ({{ script_count }})</a></li>
             <li><a id="posts" href="{{ site.url }}/posts/">All Posts ({{ all_count }})</a></li>
             
-		  {% endfor %}
         </ul><!-- /.dl-menu -->
         
         {% assign idname = page.dir | replace: '/', '' %}
