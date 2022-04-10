@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Google Cloud Platform 무료서버를 가져가보자 | 껌종이의 블로그 공간</title>
+    
+    
+        <meta name="keywords" content="aws,project" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="img{      border-radius: 5px;  }     목적Google Cloud Platform 에서 제공하는 1년치 인스턴스를 제외하고, 무료로 서버를 받는 방법을 알아보자 사용방법 무료로 사용하기 위해서는 다음 조건을 충족을 해야한다 - 해당 리전과, 용량을 지정해서 사용할 것     경로 및 설정 방법  (1) 구글 클라우드 플랫폼 홈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google Cloud Platform 무료서버를 가져가보자">
+<meta property="og:url" content="https://hakseong-kim.github.io/2022/04/10/2020-08-12-google-cloud-platform/index.html">
+<meta property="og:site_name" content="껌종이의 블로그 공간">
+<meta property="og:description" content="img{      border-radius: 5px;  }     목적Google Cloud Platform 에서 제공하는 1년치 인스턴스를 제외하고, 무료로 서버를 받는 방법을 알아보자 사용방법 무료로 사용하기 위해서는 다음 조건을 충족을 해야한다 - 해당 리전과, 용량을 지정해서 사용할 것     경로 및 설정 방법  (1) 구글 클라우드 플랫폼 홈">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/45492520/89964158-59e20580-dc84-11ea-8f0a-5545f57b3937.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/45492520/89963037-7b8dbd80-dc81-11ea-83ae-bb8e476ec597.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/45492520/89982363-8ca1f300-dcb0-11ea-9218-af59268b35a7.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/45492520/89982935-99731680-dcb1-11ea-9d40-326eb3a39402.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/45492520/89987806-967c2400-dcb9-11ea-88c1-41532e3568c0.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/45492520/89992088-badaff00-dcbf-11ea-890d-c7b9866e862d.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/45492520/89992445-3fc61880-dcc0-11ea-817e-116c8fa85d5d.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/45492520/89992445-3fc61880-dcc0-11ea-817e-116c8fa85d5d.png">
+<meta property="article:published_time" content="2022-04-10T13:38:07.000Z">
+<meta property="article:modified_time" content="2022-04-10T13:41:48.693Z">
+<meta property="article:author" content="Hakseong Kim">
+<meta property="article:tag" content="aws">
+<meta property="article:tag" content="project">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/45492520/89964158-59e20580-dc84-11ea-8f0a-5545f57b3937.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="껌종이의 블로그 공간" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">껌종이의 블로그 공간</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">home</a>
+                
+                    <a class="main-nav-link" href="/archives">archives</a>
+                
+                    <a class="main-nav-link" href="/categories">categories</a>
+                
+                    <a class="main-nav-link" href="/tags">tags</a>
+                
+                    <a class="main-nav-link" href="/about">about</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">about</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            google
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="/2022/04/10/2020-08-12-google-cloud-platform/">Google Cloud Platform 무료서버를 가져가보자</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/2022/04/10/hello-world/">Hello World</a></li>  <li class="file"><a href="/2022/04/10/My-first-Post/">My first Post</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>recent</span></h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/10/2020-08-12-google-cloud-platform/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/google/">google</a></p>
+                            <p class="item-title"><a href="/2022/04/10/2020-08-12-google-cloud-platform/" class="title">Google Cloud Platform 무료서버를 가져가보자</a></p>
+                            <p class="item-date"><time datetime="2022-04-10T13:38:07.000Z" itemprop="datePublished">2022-04-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/10/My-first-Post/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2022/04/10/My-first-Post/" class="title">My first Post</a></p>
+                            <p class="item-date"><time datetime="2022-04-10T11:45:14.000Z" itemprop="datePublished">2022-04-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/10/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2022/04/10/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2022-04-10T11:35:12.374Z" itemprop="datePublished">2022-04-10</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>archives</span></h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tags</span></h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws/" rel="tag">aws</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hh/" rel="tag">hh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/project/" rel="tag">project</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tag cloud</span></h3>
+        <div class="widget tagcloud">
+            <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/hh/" style="font-size: 10px;">hh</a> <a href="/tags/project/" style="font-size: 10px;">project</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title"><span>links</span></h3>
+        <div class="widget">
+            <ul>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-2020-08-12-google-cloud-platform" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/google/">google</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/aws/" rel="tag">aws</a>, <a class="tag-link-link" href="/tags/project/" rel="tag">project</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2022/04/10/2020-08-12-google-cloud-platform/">
+            <time datetime="2022-04-10T13:38:07.000Z" itemprop="datePublished">2022-04-10</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/2020-08-12-google-cloud-platform.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/2020-08-12-google-cloud-platform.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/2020-08-12-google-cloud-platform.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Google Cloud Platform 무료서버를 가져가보자
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%EB%AA%A9%EC%A0%81"><span class="toc-number">1.</span> <span class="toc-text">목적</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95"><span class="toc-number">1.1.</span> <span class="toc-text">사용방법</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EA%B2%BD%EB%A1%9C-%EB%B0%8F-%EC%84%A4%EC%A0%95-%EB%B0%A9%EB%B2%95"><span class="toc-number">1.2.</span> <span class="toc-text">경로 및 설정 방법</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EA%B2%B0%EA%B3%BC-%ED%99%94%EB%A9%B4"><span class="toc-number">1.3.</span> <span class="toc-text">결과 화면</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EB%8B%A4%EB%A5%B8-%EA%B8%B0%EA%B8%B0%EC%97%90%EC%84%9C-%EC%84%9C%EB%B2%84%EB%A1%9C-%EC%A0%91%EC%86%8D%EC%9D%84-%ED%95%B4%EB%B3%B4%EC%9E%90"><span class="toc-number">1.4.</span> <span class="toc-text">다른 기기에서 서버로 접속을 해보자</span></a></li></ol></li></ol>
+                </div>
+            
+        
+        
+            <style>
+ img{
+     border-radius: 5px;
+ }
+
+</style>
+
+
+<h1 id="목적"><a href="#목적" class="headerlink" title="목적"></a>목적</h1><p>Google Cloud Platform 에서 제공하는 1년치 인스턴스를 제외하고, 무료로 서버를 받는 방법을 알아보자</p>
+<h2 id="사용방법"><a href="#사용방법" class="headerlink" title="사용방법"></a>사용방법</h2><blockquote>
+<p>무료로 사용하기 위해서는 다음 조건을 충족을 해야한다 - 해당 리전과, 용량을 지정해서 사용할 것</p>
+</blockquote>
+<img src="https://user-images.githubusercontent.com/45492520/89964158-59e20580-dc84-11ea-8f0a-5545f57b3937.png" width=50%>
+
+
+<h2 id="경로-및-설정-방법"><a href="#경로-및-설정-방법" class="headerlink" title="경로 및 설정 방법"></a>경로 및 설정 방법</h2><!-- <img src="https://user-images.githubusercontent.com/45492520/89963037-7b8dbd80-dc81-11ea-83ae-bb8e476ec597.png" width=40%> -->
+
+<p>(1) <a target="_blank" rel="noopener" href="https://cloud.google.com/free?hl=ko">구글 클라우드 플랫폼</a> 홈페이지 접속<br><br>(2) 메인 화면의 [<a target="_blank" rel="noopener" href="https://console.cloud.google.com/freetrial/signup/tos?hl=ko&_ga=2.12091890.778630772.1597133095-287812363.1597133095&_gac=1.170650260.1597133169.EAIaIQobChMIz8m8s9iS6wIVUqmWCh3RsgffEAAYASAAEgI8X_D_BwE">무료로 시작하기</a>] 클릭 <br><br>(3) 계정 및 결제정보 입력 후 접속<br></p>
+<img src="https://user-images.githubusercontent.com/45492520/89982363-8ca1f300-dcb0-11ea-9218-af59268b35a7.png" width=50%>
+
+<p>(4) [햄버거 메뉴] - [Compute Engine] - [VM인스턴스] 이동<br><br>(5) [만들기] 클릭 후 <b>다음과 같이 설정을 한다.</b><br></p>
+<ul>
+<li>리전은 국가 3개 중 하나 선택(오리건, 아이오와, 사우스캐롤라이나), 영역은 아무거나</li>
+<li>시리즈는 N1(냅둬도됨), 머신은 f1-micro</li>
+<li>부팅디스크는 원하는거 선택, 안에 용량은 표준에 30GB안에서 선택</li>
+<li>엑세스 범위는 모든 클라우스 api 허용, 방화벽 모두 체크</li>
+</ul>
+<img src="https://user-images.githubusercontent.com/45492520/89982935-99731680-dcb1-11ea-9d40-326eb3a39402.png" width=50%>
+
+<blockquote>
+<p>지정 완료 후 월별 예상금액이 나오는데, 설정만 잘 해줬을 경우 큰 문제없이 과금이 되지 않을 것이다.</p>
+</blockquote>
+<h2 id="결과-화면"><a href="#결과-화면" class="headerlink" title="결과 화면"></a>결과 화면</h2><blockquote>
+<p>[VM 인스턴스] 페이지에서 결과된 모습을 보고, 표시된 [SSH] 연결 버튼도 눌러보자</p>
+</blockquote>
+<img src="https://user-images.githubusercontent.com/45492520/89987806-967c2400-dcb9-11ea-88c1-41532e3568c0.png" width=60%>
+
+
+
+<h2 id="다른-기기에서-서버로-접속을-해보자"><a href="#다른-기기에서-서버로-접속을-해보자" class="headerlink" title="다른 기기에서 서버로 접속을 해보자"></a>다른 기기에서 서버로 접속을 해보자</h2><blockquote>
+<p> mac 기준 key 만들기</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub // 키 있나 보기</span><br><span class="line">$ cd ~/.ssh //  없으면 이동 후</span><br><span class="line">$ ssh-keygen // 키 생성</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>키 값 집어넣기</p>
+</blockquote>
+<ol>
+<li>[메타데이터] - [SSH 탭] 에서 키 추가</li>
+</ol>
+<blockquote>
+<p>아이피 고정 설정하기</p>
+</blockquote>
+<img src="https://user-images.githubusercontent.com/45492520/89992088-badaff00-dcbf-11ea-890d-c7b9866e862d.png" width=60%>
+
+
+<ol>
+<li>[해당 옆 추가메뉴] - [네트워크 세부설정 보기] 후 왼쪽 메뉴에 [외부 IP 주소] 클릭 </li>
+<li>해당 아이피 유형을 고정으로 변경</li>
+</ol>
+<blockquote>
+<p>최종 연결</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh [등록된 key 이름]@[클라우드 아이피 주소]</span><br></pre></td></tr></table></figure>
+<!-- <img src="https://user-images.githubusercontent.com/45492520/89992445-3fc61880-dcc0-11ea-817e-116c8fa85d5d.png" width=40%> -->
+<img src="https://user-images.githubusercontent.com/45492520/89992445-3fc61880-dcc0-11ea-817e-116c8fa85d5d.png" width=40%>
+
+
+
+
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+    
+        <a href="/2022/04/10/My-first-Post/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">My first Post</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Hakseong Kim &copy; 2022 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
