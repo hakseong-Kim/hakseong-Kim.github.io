@@ -12,7 +12,7 @@ $ npm install
 3. 테마적용을 위해 git clone 진행 (필자는 icarus 테마를 선택)
 $ git clone https://github.com/ppoffice/hexo-theme-icarus.git
 
-###hexo 테마
+### hexo 테마
 4. themes 폴더안에 clone 받은 테마의 폴더명을 hexo-theme-icarus -> icarus로 변경해준다.
 5. 루트 경로에서 _config.yml 파일을 아래처럼 수정해준다.
 
@@ -22,13 +22,13 @@ $ npm install --save bulma-stylus hexo-component-inferno hexo-renderer-inferno i
 7. hexo s 명령어로 로컬에서 테마가 적용됬는지 확인
 $ hexo s 
 
-###GitHub Pages
+### GitHub Pages
 깃헙 페이지를 이용해 블로그를 배포하기 위해 우선 Repository를 생성해둔다.
 
 "GitHub사용자이름".github.io 로 Repository를 생성해주면 
 https://사용자이름.github.io/ 블로그 주소로 사용 가능
 
-###Hexo-Deployer-Git
+### Hexo-Deployer-Git
 Hexo에서 Git으로 정적파일을 생성후 편하게 배포하기위한 패키지를 받아준다.
 
 $ npm install --save hexo-deployer-git
