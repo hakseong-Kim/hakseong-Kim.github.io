@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hakseong-kim.github.io/2022/04/10/2020-08-12-google-cloud-platform/</loc>
+    
+    <lastmod>2023-01-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hakseong-kim.github.io/2022/04/10/My-first-Post/</loc>
+    
+    <lastmod>2022-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hakseong-kim.github.io/categories/index.html</loc>
     
     <lastmod>2022-04-10</lastmod>
@@ -20,25 +38,7 @@
   </url>
   
   <url>
-    <loc>https://hakseong-kim.github.io/2022/04/10/2020-08-12-google-cloud-platform/</loc>
-    
-    <lastmod>2022-04-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hakseong-kim.github.io/tags/index.html</loc>
-    
-    <lastmod>2022-04-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hakseong-kim.github.io/2022/04/10/My-first-Post/</loc>
     
     <lastmod>2022-04-10</lastmod>
     
@@ -58,7 +58,7 @@
 
   <url>
     <loc>https://hakseong-kim.github.io/</loc>
-    <lastmod>2022-04-10</lastmod>
+    <lastmod>2023-01-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -66,21 +66,21 @@
   
   <url>
     <loc>https://hakseong-kim.github.io/tags/hh/</loc>
-    <lastmod>2022-04-10</lastmod>
+    <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hakseong-kim.github.io/tags/aws/</loc>
-    <lastmod>2022-04-10</lastmod>
+    <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hakseong-kim.github.io/tags/project/</loc>
-    <lastmod>2022-04-10</lastmod>
+    <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -89,7 +89,7 @@
   
   <url>
     <loc>https://hakseong-kim.github.io/categories/google/</loc>
-    <lastmod>2022-04-10</lastmod>
+    <lastmod>2023-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
