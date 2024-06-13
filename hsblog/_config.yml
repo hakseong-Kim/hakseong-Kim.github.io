@@ -97,13 +97,13 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: Wikitten
+theme: 3-hexo 
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/hakseong-Kim/hakseong-Kim.github.io
+  repo: git@github.com:hakseong-Kim/hakseong-Kim.github.io
   branch: master
 
 
